@@ -2,5 +2,5 @@
 - hosts: all
   tasks:
   - name: install steamcmd
-      apt_repository:
+    apt_repository:
       repo: multiverse
