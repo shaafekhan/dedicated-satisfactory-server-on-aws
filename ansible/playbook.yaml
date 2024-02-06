@@ -1,6 +1,6 @@
 ---
-- hosts: local
+- hosts: all:localhost
   tasks:
   - name: install steamcmd
     apt_repository:
-      repo: multiverse
+      repo: 'deb http://us.archive.ubuntu.com/ubuntu/ jammy universe multiverse'
