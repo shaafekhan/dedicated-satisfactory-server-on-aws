@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: local
   tasks:
   - name: install steamcmd
     apt_repository:
