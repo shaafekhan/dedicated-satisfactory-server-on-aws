@@ -1,0 +1,7 @@
+
+
+1. add EBS and attach to instance
+    -Can just use root_block_device
+2. set up security group
+3. add init stuff
+4. 
