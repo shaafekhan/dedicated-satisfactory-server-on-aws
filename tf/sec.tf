@@ -6,7 +6,7 @@ resource "aws_security_group" "sf_instance_sg" {
 
 
 resource "aws_vpc_security_group_ingress_rule" "allow_sf_ports" {
-    for_each = toset(["15000", "15777", "777"])
+    for_each = toset(["15000", "15777", "7777"])
     security_group_id = aws_security_group.sf_instance_sg.id
     cidr_ipv4         = "0.0.0.0/0"
     from_port         = each.key

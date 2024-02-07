@@ -1,4 +1,3 @@
-
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -32,6 +31,7 @@ resource "aws_instance" "sfi" {
   key_name =  "DS2024-FRANKFURT"
   user_data = file("./install-ansible.sh")
   
+  
 
   network_interface {
     network_interface_id = aws_network_interface.sfec2int.id
@@ -43,5 +43,3 @@ resource "aws_instance" "sfi" {
   }
 
 }
-
-

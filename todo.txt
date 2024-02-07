@@ -3,5 +3,9 @@
 1. add EBS and attach to instance
     -Can just use root_block_device
 2. set up security group
+    - done
 3. add init stuff
-4. 
+ - need to add git pull and run ansible
+4. in ansible, add switch user to steam
+5. in ansible, add satisfactory systemctl and run
+6. in ansible, add crontab for periodic save game backups
