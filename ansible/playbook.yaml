@@ -1,6 +1,39 @@
 ---
 - hosts: all:localhost
+  become: yes
   tasks:
-  - name: install steamcmd
+  - name: enable multiverse
     apt_repository:
       repo: 'deb http://us.archive.ubuntu.com/ubuntu/ jammy universe multiverse'
+  
+  - name: enable i386
+    command: dpkg --add-architecture i386
+
+  - name: Run the equivalent of "apt-get update" as a separate step
+    apt:
+      update_cache: yes
+
+  - name: Debian - Interactive step one
+    debconf:
+      name: steamcmd
+      question: steam/question
+      value: 'I AGREE'
+      vtype: select
+
+  - name: Debian - Interactive step two
+    debconf:
+      name: steamcmd
+      question: steam/license
+      value: ''
+      vtype: note
+
+  - name: install steamcmd
+    apt:
+      name: steamcmd
+
+  - name: add steam user and create home golder
+    user:
+      name: steam
+      password: '$y$j9T$asZnGofAks.I66V/Z0eu3/$jD2M4fa3sGgNNShRfD5fOM7zEJc/IQ3QZcBuXffEO1D'
+      create_home: true
+
