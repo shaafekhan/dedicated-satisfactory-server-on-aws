@@ -25,7 +25,7 @@ resource "aws_network_interface" "sfec2int" {
 }
 
 resource "aws_instance" "sfi" {
-  ami           = data.aws_ami.ubuntu.id
+  ami           = "ami-04d9351fa78a6efea"
   instance_type = "t3a.medium"
   availability_zone = "eu-central-1a"
   key_name =  "DS2024-FRANKFURT"

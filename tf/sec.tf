@@ -14,10 +14,6 @@ resource "aws_vpc_security_group_ingress_rule" "allow_sf_ports" {
     to_port           = each.key
 }
 
-variable "home_ip" {
-    type = string
-
-}
 
 resource "aws_vpc_security_group_ingress_rule" "allow_home" {
     security_group_id = aws_security_group.sf_instance_sg.id
